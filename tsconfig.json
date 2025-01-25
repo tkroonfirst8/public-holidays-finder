@@ -12,8 +12,10 @@
     }
   ],
   "compilerOptions": {
+    "module": "ESNext",
     "paths": {
       "@/*": ["./src/*"]
-    }
+    },
+    "moduleResolution": "bundler"
   }
 }

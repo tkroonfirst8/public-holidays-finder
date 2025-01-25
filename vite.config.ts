@@ -14,6 +14,22 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url)),
     },
   },
+  build: {
+    outDir: 'dist',
+    assetsDir: 'assets',
+    // Ensure JS files are generated
+    rollupOptions: {
+      output: {
+        entryFileNames: 'assets/[name].[hash].js',
+        chunkFileNames: 'assets/[name].[hash].js',
+        assetFileNames: 'assets/[name].[hash][extname]',
+      },
+    },
+    // Generate source maps for better debugging
+    sourcemap: true,
+    // Clean the output directory before building
+    emptyOutDir: true,
+  },
   test: {
     include: ['src/**/*.spec.ts'],
   },
