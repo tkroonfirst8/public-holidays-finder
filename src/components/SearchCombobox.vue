@@ -7,6 +7,7 @@
     optionLabel="name"
     :suggestions="filteredCountries"
     :inputStyle="{ width: '15rem' }"
+    data-testid="country-select"
     @complete="search"
   />
 </template>

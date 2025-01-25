@@ -1,5 +1,5 @@
 <template>
-  <DataTable :value="holidays">
+  <DataTable data-testid="skeleton-table" :value="holidays">
     <Column field="date" header="Date">
       <template #body>
         <Skeleton></Skeleton>

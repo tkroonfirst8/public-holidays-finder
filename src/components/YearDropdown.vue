@@ -6,6 +6,7 @@
     optionValue="value"
     placeholder="Select a Year"
     class="w-full"
+    data-testid="year-select"
   />
 </template>
 

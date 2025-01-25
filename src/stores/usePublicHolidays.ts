@@ -1,8 +1,6 @@
 import { defineStore } from 'pinia'
-import axios from 'axios'
-import type { CountryV3Dto, PublicHolidayV3Dto } from '@/types/Api'
+import type { PublicHolidayV3Dto } from '@/types/Api'
 import { getYear } from 'date-fns'
-import { Select } from 'primevue'
 
 export const usePublicHolidays = defineStore('publicHolidays', {
   state: () => ({
@@ -15,23 +13,26 @@ export const usePublicHolidays = defineStore('publicHolidays', {
 
   actions: {
     setSelectedYear(year: string) {
-      this.selectedYear = year // Update the selected year
+      this.selectedYear = year
       if (this.selectedCountry) {
-        this.fetchPublicHolidays(this.selectedCountry) // Optionally trigger a fetch for holidays
+        this.fetchPublicHolidays(this.selectedCountry)
       }
     },
     async fetchPublicHolidays(countryCode: string) {
       this.selectedCountry = countryCode
       this.loading = true
       this.error = null
-      this.holidays = [] // Reset holidays before fetching
+      this.holidays = []
       try {
-        const response = await axios.get(
+        const response = await fetch(
           `https://date.nager.at/api/v3/PublicHolidays/${this.selectedYear}/${countryCode}`,
         )
-        this.holidays = response.data
+        if (!response.ok) {
+          throw new Error('Network response was not ok')
+        }
+        this.holidays = await response.json()
       } catch (error) {
-        this.error = "We're not able to fetch any holidays ate the moment. Please try again later."
+        this.error = "We're not able to fetch any holidays at the moment. Please try again later."
         console.error(error)
       } finally {
         this.loading = false

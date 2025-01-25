@@ -1,5 +1,4 @@
 import { defineStore } from 'pinia'
-import axios from 'axios'
 import type { CountryV3Dto } from '@/types/Api'
 
 export const useCountries = defineStore('countries', {
@@ -14,8 +13,11 @@ export const useCountries = defineStore('countries', {
       this.loading = true
       this.error = null
       try {
-        const response = await axios.get('https://date.nager.at/api/v3/AvailableCountries')
-        this.countries = response.data
+        const response = await fetch('https://date.nager.at/api/v3/AvailableCountries')
+        if (!response.ok) {
+          throw new Error('Network response was not ok')
+        }
+        this.countries = await response.json()
       } catch (error) {
         this.error = 'Failed to fetch countries'
         console.error(error)
