@@ -1,6 +1,67 @@
 # public-holidays-finder
 
-This template should help get you started developing with Vue 3 in Vite.
+This is a simple app to find public holidays for any country.
+
+prerequisites:
+
+- node 22
+- npm 9+
+- vue 3
+- primevue
+- tailwindcss
+- pinia
+- playwright
+
+.
+├── README.md
+├── e2e
+│   ├── holidays-finder.spec.ts
+│   └── tsconfig.json
+├── env.d.ts
+├── eslint.config.ts
+├── index.html
+├── package-lock.json
+├── package.json
+├── playwright.config.ts
+├── postcss.config.ts
+├── public
+│   └── favicon.ico
+├── src
+│   ├── App.vue
+│   ├── api
+│   │   └── Nager.Date API - V3.json
+│   ├── assets
+│   │   ├── logo.svg
+│   │   └── main.css
+│   ├── components
+│   │   ├── HolidaysTableComponent.vue
+│   │   ├── SearchCombobox.vue
+│   │   ├── SkeletonTable.vue
+│   │   ├── UpNext.vue
+│   │   ├── YearDropdown.vue
+│   │   ├── __tests__
+│   │   └── icons
+│   ├── env.d.ts
+│   ├── lib.ts
+│   ├── main.ts
+│   ├── router
+│   │   └── index.ts
+│   ├── stores
+│   │   ├── counter.ts
+│   │   ├── useCountries.ts
+│   │   ├── usePublicHolidays.ts
+│   │   ├── useUpNext.ts
+│   │   └── useYears.ts
+│   └── types
+│       └── Api.ts
+├── tailwind.config.ts
+├── test-results
+├── tsconfig.app.json
+├── tsconfig.json
+├── tsconfig.node.json
+├── tsconfig.vitest.json
+├── vite.config.ts
+└── vitest.config.ts
 
 ## Recommended IDE Setup
 
@@ -75,11 +136,11 @@ npm run format
 - Change the year to view holidays for a different year (ten years back and forward)
 - Show the next upcoming public holiday worldwide
 
-# Public Holiday API Integration
+## Public Holiday API Integration
 
 This project integrates with the [Nager.Date API](https://date.nager.at/), a comprehensive public holiday web service that provides worldwide holiday data.
 
-## API Documentation
+### API Documentation
 
 This project uses the Nager.Date API (https://date.nager.at/), which provides:
 
@@ -88,7 +149,7 @@ This project uses the Nager.Date API (https://date.nager.at/), which provides:
 - JSON response format
 - Comprehensive country coverage
 
-### Main Endpoints
+#### Main Endpoints
 
 - Get holidays for a specific year and country:
 
@@ -114,3 +175,8 @@ This project uses the Nager.Date API (https://date.nager.at/), which provides:
 3. Make requests to the API endpoints
 
 ## Example Usage
+
+```
+npm install
+npm run dev
+```
