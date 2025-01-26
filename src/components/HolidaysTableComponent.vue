@@ -48,7 +48,7 @@ import Column from 'primevue/column'
 import { computed } from 'vue'
 import { usePublicHolidays } from '@/stores/usePublicHolidays'
 import Card from 'primevue/card'
-import { format } from 'date-fns'
+import { formatDate } from '@/lib'
 import SkeletonTable from './SkeletonTable.vue'
 import type { PublicHolidayV3Dto } from '@/types/Api'
 
@@ -57,10 +57,6 @@ const publicHolidaysStore = usePublicHolidays()
 const holidays = computed(() => publicHolidaysStore.holidays)
 const loading = computed(() => publicHolidaysStore.loading)
 const error = computed(() => publicHolidaysStore.error)
-
-const formatDate = (date: string | Date) => {
-  return format(new Date(date), 'd MMMM yyyy')
-}
 
 defineEmits<{
   (e: 'select-holiday', holiday: PublicHolidayV3Dto): void
