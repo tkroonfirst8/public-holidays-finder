@@ -12,6 +12,7 @@ prerequisites:
 - pinia
 - playwright
 
+```
 .
 ├── README.md
 ├── e2e
