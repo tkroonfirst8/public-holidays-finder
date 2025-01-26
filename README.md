@@ -69,16 +69,15 @@ npm run lint
 npm run format
 ```
 
+## Features of the app
+
+- Retrieve public holidays for any supported country
+- Change the year to view holidays for a different year (ten years back and forward)
+- Show the next upcoming public holiday worldwide
+
 # Public Holiday API Integration
 
 This project integrates with the [Nager.Date API](https://date.nager.at/), a comprehensive public holiday web service that provides worldwide holiday data.
-
-## Features
-
-- Retrieve public holidays for any supported country
-- Check if a specific date is a holiday
-- Get upcoming holidays for a region
-- Support for multiple country codes
 
 ## API Documentation
 

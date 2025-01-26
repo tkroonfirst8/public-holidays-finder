@@ -17,23 +17,19 @@
     <div class="flex flex-1 overflow-hidden">
       <!-- Main Content -->
       <main class="flex-1 bg-gray-50 overflow-y-auto p-6">
+        <UpNext />
         <HolidaysTableComponent />
-
-        <!-- <RouterView /> -->
       </main>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-// import { useRouter } from 'vue-router'
 import YearDropdown from '@/components/YearDropdown.vue'
 import HolidaysTableComponent from '@/components/HolidaysTableComponent.vue'
 import { Toolbar } from 'primevue'
-
 import SearchCombobox from '@/components/SearchCombobox.vue'
-
-// const router = useRouter()
+import UpNext from '@/components/UpNext.vue'
 </script>
 
 <style>
