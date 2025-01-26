@@ -63,6 +63,7 @@ prerequisites:
 ├── tsconfig.vitest.json
 ├── vite.config.ts
 └── vitest.config.ts
+```
 
 ## Recommended IDE Setup
 
